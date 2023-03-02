@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/repo_nav_graph"
+    app:startDestination="@id/repoList">
+
+    <fragment
+        android:id="@+id/repoList"
+        android:name="com.example.a1stzoomassignment.RepoFragments.RepoList"
+        android:label="RepoList" >
+        <action
+            android:id="@+id/action_repoList_to_editRepo"
+            app:destination="@id/editRepo" />
+        <action
+            android:id="@+id/action_repoList_to_addRepo"
+            app:destination="@id/addRepo" />
+    </fragment>
+    <fragment
+        android:id="@+id/editRepo"
+        android:name="com.example.a1stzoomassignment.RepoFragments.EditRepo"
+        android:label="fragment_edit_repo"
+        tools:layout="@layout/fragment_edit_repo" >
+        <argument
+            android:name="RepoToEdit"
+            app:argType="com.example.a1stzoomassignment.DataModels.Repo" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRepo"
+        android:name="com.example.a1stzoomassignment.RepoFragments.AddRepo"
+        android:label="fragment_add_repo"
+        tools:layout="@layout/fragment_add_repo" />
+</navigation>
